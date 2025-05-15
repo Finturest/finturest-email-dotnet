@@ -22,7 +22,7 @@ This SDK provides a simple and reliable way to integrate Finturest Email API fun
 
 To get access to the Finturest Email API or subscribe to a plan, please visit the subscription page. An active subscription is required to access the API in production.
 
-[Manage subscriptions](https://finturest.com/products/email-api)
+[Manage subscriptions](https://finturest.com/dashboard/subscriptions)
 
 ## API Key Generation
 
