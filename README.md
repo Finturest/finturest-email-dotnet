@@ -1,6 +1,6 @@
 # Finturest Email API C# SDK
 
-Official C# SDK for the Finturest Email API — supports .NET Standard 2.0+ and all modern .NET versions.
+Official C# SDK for the Finturest Email API - supports .NET Standard 2.0+ and all modern .NET versions.
 
 [Finturest Email API](https://finturest.com/products/email-api)
 
