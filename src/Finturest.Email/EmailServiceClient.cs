@@ -53,6 +53,6 @@ public class EmailServiceClient : IEmailServiceClient
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ValidateEmailResponse>(_jsonSerializerOptions, cancellationToken).ConfigureAwait(false) ?? throw new InvalidOperationException("Response is null.");
+        return await response.Content.ReadFromJsonAsync<ValidateEmailResponse>(_jsonSerializerOptions, cancellationToken).ConfigureAwait(false) ?? throw new InvalidOperationException("Failed to deserialize response.");
     }
 }
