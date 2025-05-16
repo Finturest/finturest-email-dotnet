@@ -5,13 +5,21 @@ public record ValidateEmailResponse
     /// <summary>
     /// The original email address that was validated.
     /// </summary>
-    public string Email { get; set; }
+#if NET6_0_OR_GREATER
+    public required string Email { get; init; }
+#else
+    public string Email { get; set; } = null!;
+#endif
 
     /// <summary>
     /// Indicates whether the email address passed all validation checks and is considered capable of receiving messages.
     /// A value of true means the address is syntactically correct, the domain is properly configured, and no issues were detected during verification.
     /// </summary>
+#if NET6_0_OR_GREATER
+    public required bool Deliverable { get; init; }
+#else
     public bool Deliverable { get; set; }
+#endif
 
     /// <summary>
     /// A list of validation results for the given email address.

@@ -12,6 +12,7 @@ public record EmailValidationResult
     /// </summary>
     public EmailValidationType Type { get; set; }
 
+
     /// <summary>
     /// Represents the status of the validation check.
     /// Possible values include:
