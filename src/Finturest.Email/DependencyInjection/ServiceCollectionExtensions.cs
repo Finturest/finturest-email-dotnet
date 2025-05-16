@@ -1,9 +1,11 @@
-﻿using Finturest.Email.Options;
+﻿using Finturest.Email.Constants;
+using Finturest.Email.Options;
 
 using Fitnurest.Email.Abstractions;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace Finturest.Email.DependencyInjection;
 
@@ -49,7 +51,14 @@ public static class ServiceCollectionExtensions
 
     private static IServiceCollection AddFinturestEmail(this IServiceCollection services)
     {
-        services.AddHttpClient<IEmailServiceClient, EmailServiceClient>();
+        services.AddHttpClient<IEmailServiceClient, EmailServiceClient>((serviceProvider, client) =>
+        {
+            var options = serviceProvider.GetRequiredService<IOptions<EmailOptions>>().Value;
+
+            client.BaseAddress = new Uri(options.BaseAddress);
+
+            client.DefaultRequestHeaders.Add(HeaderConstants.ApiKey, options.ApiKey);
+        });
 
         return services;
     }
