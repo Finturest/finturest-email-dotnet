@@ -1,0 +1,18 @@
+﻿using System.ComponentModel;
+
+namespace Fitnurest.Email.Abstractions.Models.Responses;
+
+public record ValidateEmailResponseApiModel
+{
+    [Description("The original email address that was validated.")]
+    public string Email { get; set; }
+
+    [Description("Indicates whether the email address passed all validation checks and is considered capable of receiving messages. A value of true means the address is syntactically correct, the domain is properly configured, and no issues were detected during verification.")]
+    public bool Deliverable { get; set; }
+
+    [Description("A list of validation results for the given email address. Each item contains the outcome of a specific validation check (e.g., format, MX, SMTP).")]
+    public IReadOnlyList<EmailValidationResultApiModel> Validations { get; set; } = [];
+
+    [Description("Describes various characteristics of the email address, such as whether it is role-based, disposable, from a free provider, or part of a catch-all domain. This property provides metadata about the email’s structure and type, which can help identify its purpose or origin. Each classification is represented as a boolean flag indicating the presence of a specific trait, like being a role-based email (e.g., info@, support@) or being from a disposable email provider.")]
+    public EmailClassificationsApiModel? Classifications { get; set; }
+}
