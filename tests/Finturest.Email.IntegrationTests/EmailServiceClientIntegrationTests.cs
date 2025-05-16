@@ -1,4 +1,6 @@
-﻿using Finturest.Email.DependencyInjection;
+﻿using System.Net;
+
+using Finturest.Email.DependencyInjection;
 
 using Fitnurest.Email.Abstractions;
 using Fitnurest.Email.Abstractions.Models.Enums;
@@ -17,16 +19,25 @@ public class EmailServiceClientIntegrationTests
 
     public EmailServiceClientIntegrationTests()
     {
-        var services = new ServiceCollection();
+        _sut = BuildClient(apiKey: "{your-api-key}");
+    }
 
-        services.AddFinturestEmail(options =>
+    [Fact]
+    public async Task ValidateEmailAsync_ApiKeyIsValid_EnsureUnauthorizedStatusCode()
+    {
+        // Arrange
+        var request = new ValidateEmailRequest
         {
-            options.ApiKey = "";
-        });
+            Email = "support@finturest.com"
+        };
 
-        var serviceProvider = services.BuildServiceProvider();
+        // Act
+        Func<Task> action = async () => await BuildClient(apiKey: "invalid-api-key").ValidateEmailAsync(request).ConfigureAwait(false);
 
-        _sut = serviceProvider.GetRequiredService<IEmailServiceClient>();
+        // Assert
+        var assertion = await action.ShouldThrowAsync<HttpRequestException>();
+
+        assertion.StatusCode.ShouldBe(HttpStatusCode.Unauthorized);
     }
 
     [Fact]
@@ -111,5 +122,19 @@ public class EmailServiceClientIntegrationTests
         result.Validations[1].Status.ShouldBe(EmailValidationStatus.Failed);
 
         result.Classifications.ShouldBeNull();
+    }
+
+    private static IEmailServiceClient BuildClient(string apiKey)
+    {
+        var services = new ServiceCollection();
+
+        services.AddFinturestEmail(options =>
+        {
+            options.ApiKey = apiKey;
+        });
+
+        var serviceProvider = services.BuildServiceProvider();
+
+        return serviceProvider.GetRequiredService<IEmailServiceClient>();
     }
 }
