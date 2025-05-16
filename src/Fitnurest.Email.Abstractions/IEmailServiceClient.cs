@@ -5,5 +5,5 @@ namespace Fitnurest.Email.Abstractions;
 
 public interface IEmailServiceClient
 {
-    Task<ValidateEmailResponse> ValidateEmailAsync(ValidateEmailRequest request);
+    Task<ValidateEmailResponse> ValidateEmailAsync(ValidateEmailRequest request, CancellationToken cancellationToken = default);
 }
