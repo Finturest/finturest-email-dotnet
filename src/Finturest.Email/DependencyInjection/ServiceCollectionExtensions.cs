@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Finturest.Email.DependencyInjection;
 
-public static class EmailServiceCollectionExtensions
+public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddFinturestEmail(this IServiceCollection services, IConfigurationSection configurationSection)
     {
