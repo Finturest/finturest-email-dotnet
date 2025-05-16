@@ -1,6 +1,6 @@
 ﻿namespace Fitnurest.Email.Abstractions.Models;
 
-public record EmailClassificationsApiModel
+public record EmailClassifications
 {
     /// <summary>
     /// Indicates whether the email address is from a known disposable or temporary email provider.

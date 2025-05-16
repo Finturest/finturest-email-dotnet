@@ -1,8 +1,6 @@
-﻿using System.ComponentModel;
+﻿namespace Fitnurest.Email.Abstractions.Models.Enums;
 
-namespace Fitnurest.Email.Abstractions.Models.Enums;
-
-public enum ApiEmailValidationType
+public enum EmailValidationType
 {
     /// <summary>
     /// Validates that the email address has correct syntax according to RFC standards (e.g., user@example.com).

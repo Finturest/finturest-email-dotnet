@@ -1,6 +1,6 @@
 ﻿namespace Fitnurest.Email.Abstractions.Models.Enums;
 
-public enum ApiEmailValidationStatus
+public enum EmailValidationStatus
 {
     /// <summary>
     /// Indicates the validation check was successful and the email met the criteria.
