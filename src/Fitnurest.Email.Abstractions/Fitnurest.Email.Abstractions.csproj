@@ -11,6 +11,11 @@
     <AnalysisLevel>latest</AnalysisLevel>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="SonarAnalyzer.CSharp" Version="10.9.0.115408">
       <PrivateAssets>all</PrivateAssets>
