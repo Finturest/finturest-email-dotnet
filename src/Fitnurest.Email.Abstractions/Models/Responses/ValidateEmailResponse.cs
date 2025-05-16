@@ -25,12 +25,20 @@ public record ValidateEmailResponse
     /// A list of validation results for the given email address.
     /// Each item contains the outcome of a specific validation check (e.g., format, MX, SMTP).
     /// </summary>
+#if NET6_0_OR_GREATER
+    public required IReadOnlyList<EmailValidationResult> Validations { get; init; } = [];
+#else
     public IReadOnlyList<EmailValidationResult> Validations { get; set; } = [];
+#endif
 
     /// <summary>
     /// Describes various characteristics of the email address, such as whether it is role-based, disposable, from a free provider, or part of a catch-all domain.
     /// This property provides metadata about the email’s structure and type, which can help identify its purpose or origin.
     /// Each classification is represented as a boolean flag indicating the presence of a specific trait, like being a role-based email (e.g., info@, support@) or being from a disposable email provider.
     /// </summary>
+#if NET6_0_OR_GREATER
+    public EmailClassifications? Classifications { get; init; }
+#else
     public EmailClassifications? Classifications { get; set; }
+#endif
 }
