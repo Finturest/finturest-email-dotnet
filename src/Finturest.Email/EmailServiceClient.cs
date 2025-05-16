@@ -30,7 +30,7 @@ public class EmailServiceClient : IEmailServiceClient
 
         _httpClient.BaseAddress = new Uri(options.Value.BaseAddress);
 
-        _httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-API-KEY", options.Value.ApiKey);
+        _httpClient.DefaultRequestHeaders.TryAddWithoutValidation(HeaderConstants.ApiKey, options.Value.ApiKey);
 
         _jsonSerializerOptions = new JsonSerializerOptions
         {
