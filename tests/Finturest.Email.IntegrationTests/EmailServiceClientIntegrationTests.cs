@@ -6,8 +6,6 @@ using Fitnurest.Email.Abstractions.Models.Requests;
 
 using Microsoft.Extensions.DependencyInjection;
 
-using Shouldly;
-
 namespace Finturest.Email.IntegrationTests;
 
 /// <summary>

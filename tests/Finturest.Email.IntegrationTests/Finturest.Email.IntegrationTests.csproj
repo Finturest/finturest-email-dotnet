@@ -33,8 +33,4 @@
     <ProjectReference Include="..\..\src\Finturest.Email\Finturest.Email.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Using Include="Xunit" />
-  </ItemGroup>
-
 </Project>
