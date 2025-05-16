@@ -30,10 +30,14 @@ public class EmailServiceClient : IEmailServiceClient
 
     public async Task<ValidateEmailResponse> ValidateEmailAsync(ValidateEmailRequest request, CancellationToken cancellationToken = default)
     {
+#if NET7_0_OR_GREATER
+        ArgumentNullException.ThrowIfNull(request);
+#else
         if (request is null)
         {
             throw new ArgumentNullException(nameof(request));
         }
+#endif
 
         var uri = $"{RouteConstants.V1}/{RouteConstants.Emails}/{RouteConstants.Validate}";
 
