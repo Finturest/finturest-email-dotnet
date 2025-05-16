@@ -1,12 +1,14 @@
-﻿using System.ComponentModel;
-
-namespace Fitnurest.Email.Abstractions.Models.Enums;
+﻿namespace Fitnurest.Email.Abstractions.Models.Enums;
 
 public enum ApiEmailValidationStatus
 {
-    [Description("Indicates the validation check was successful and the email met the criteria.")]
+    /// <summary>
+    /// Indicates the validation check was successful and the email met the criteria.
+    /// </summary>
     Passed = 0,
 
-    [Description("Indicates the validation check failed (e.g., invalid format, non-existent mailbox).")]
+    /// <summary>
+    /// Indicates the validation check failed (e.g., invalid format, non-existent mailbox).
+    /// </summary>
     Failed = 1
 }

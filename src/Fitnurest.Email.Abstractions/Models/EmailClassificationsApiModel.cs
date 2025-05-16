@@ -1,15 +1,19 @@
-﻿using System.ComponentModel;
-
-namespace Fitnurest.Email.Abstractions.Models;
+﻿namespace Fitnurest.Email.Abstractions.Models;
 
 public record EmailClassificationsApiModel
 {
-    [Description("Indicates whether the email address is from a known disposable or temporary email provider.")]
+    /// <summary>
+    /// Indicates whether the email address is from a known disposable or temporary email provider.
+    /// </summary>
     public bool Disposable { get; set; }
 
-    [Description("Indicates whether the email address is from a known free email provider (e.g., Gmail, Yahoo).")]
+    /// <summary>
+    /// Indicates whether the email address is from a known free email provider (e.g., Gmail, Yahoo).
+    /// </summary>
     public bool Free { get; set; }
 
-    [Description("Indicates whether the email address is a role-based address (e.g., info@, support@).")]
+    /// <summary>
+    /// Indicates whether the email address is a role-based address (e.g., info@, support@).
+    /// </summary>
     public bool RoleBased { get; set; }
 }
