@@ -22,7 +22,7 @@ public class EmailServiceClientIntegrationTests
 
         services.AddFinturestEmail(options =>
         {
-            options.ApiKey = "hidden";
+            options.ApiKey = "";
         });
 
         var serviceProvider = services.BuildServiceProvider();
