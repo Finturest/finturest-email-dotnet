@@ -67,9 +67,4 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Publish NuGet packages to NuGet
-        run: |
-          for pkg in nuget/*.nupkg; do
-            echo "Pushing $pkg"
-            dotnet nuget push "$pkg" --api-key ${{ secrets.NUGET_API_KEY }} --source "nuget.org"
-          done
-        shell: bash
+        run: dotnet nuget push nuget/*.nupkg --api-key ${{ secrets.NUGET_KEY }} --source "nuget.org"
