@@ -7,6 +7,7 @@ using Fitnurest.Email.Abstractions;
 using Fitnurest.Email.Abstractions.Models.Enums;
 using Fitnurest.Email.Abstractions.Models.Requests;
 
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Finturest.Email.IntegrationTests;
@@ -20,11 +21,25 @@ public class EmailServiceClientIntegrationTests
 
     public EmailServiceClientIntegrationTests()
     {
-        _sut = BuildClient(apiKey: "");
+        var configuration = new ConfigurationBuilder()
+            .AddEnvironmentVariables(prefix: "Finturest_")
+#if DEBUG
+            .AddUserSecrets<EmailServiceClientIntegrationTests>()
+#endif
+            .Build();
+
+        var apiKey = configuration["Email:ApiKey"];
+
+        if (string.IsNullOrWhiteSpace(apiKey))
+        {
+            throw new InvalidOperationException("Finturest Email API key must be set in environment or user secrets.");
+        }
+
+        _sut = BuildClient(apiKey!);
     }
 
     [Fact]
-    public async Task ValidateEmailAsync_ApiKeyIsValid_EnsureUnauthorizedStatusCode()
+    public async Task ValidateEmailAsync_ApiKeyIsNotValid_EnsureUnauthorizedStatusCode()
     {
         // Arrange
         var request = new ValidateEmailRequest
