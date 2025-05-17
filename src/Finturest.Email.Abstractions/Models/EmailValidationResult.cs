@@ -1,6 +1,6 @@
-﻿using Fitnurest.Email.Abstractions.Models.Enums;
+﻿using Finturest.Email.Abstractions.Models.Enums;
 
-namespace Fitnurest.Email.Abstractions.Models;
+namespace Finturest.Email.Abstractions.Models;
 
 public record EmailValidationResult
 {

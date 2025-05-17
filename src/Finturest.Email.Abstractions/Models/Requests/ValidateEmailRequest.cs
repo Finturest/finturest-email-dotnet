@@ -1,4 +1,4 @@
-﻿namespace Fitnurest.Email.Abstractions.Models.Requests;
+﻿namespace Finturest.Email.Abstractions.Models.Requests;
 
 public record ValidateEmailRequest
 {

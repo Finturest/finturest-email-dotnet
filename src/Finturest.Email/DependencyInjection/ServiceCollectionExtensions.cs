@@ -1,7 +1,6 @@
-﻿using Finturest.Email.Constants;
+﻿using Finturest.Email.Abstractions;
+using Finturest.Email.Constants;
 using Finturest.Email.Options;
-
-using Fitnurest.Email.Abstractions;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

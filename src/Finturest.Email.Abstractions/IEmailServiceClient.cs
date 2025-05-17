@@ -1,7 +1,7 @@
-﻿using Fitnurest.Email.Abstractions.Models.Requests;
-using Fitnurest.Email.Abstractions.Models.Responses;
+﻿using Finturest.Email.Abstractions.Models.Requests;
+using Finturest.Email.Abstractions.Models.Responses;
 
-namespace Fitnurest.Email.Abstractions;
+namespace Finturest.Email.Abstractions;
 
 /// <summary>
 /// Provides methods for sending requests to and receiving responses from the Finturest Email API.

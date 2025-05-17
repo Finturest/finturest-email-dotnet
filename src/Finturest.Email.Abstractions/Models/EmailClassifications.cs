@@ -1,4 +1,4 @@
-﻿namespace Fitnurest.Email.Abstractions.Models;
+﻿namespace Finturest.Email.Abstractions.Models;
 
 public record EmailClassifications
 {
