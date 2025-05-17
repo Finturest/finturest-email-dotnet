@@ -53,7 +53,7 @@ jobs:
     name: Publish
     if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/releases/')
     needs: [build]
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4
@@ -67,4 +67,9 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Publish NuGet packages to NuGet
-        run: dotnet nuget push nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "nuget.org"
+        run: |
+          for pkg in nuget/*.nupkg; do
+            echo "Pushing $pkg"
+            dotnet nuget push "$pkg" --api-key ${{ secrets.NUGET_API_KEY }} --source "nuget.org"
+          done
+        shell: bash
