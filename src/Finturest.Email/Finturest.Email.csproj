@@ -9,14 +9,19 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <AnalysisLevel>latest</AnalysisLevel>
-    <Authors>Finturest</Authors>
+    <Authors>Finturest Team</Authors>
+    <Company>Finturest</Company>
+    <Copyright>Plainzer LLC, 2025</Copyright>
     <Description>Official C# SDK for Finturest Email API - supports .NET Standard 2.0+ and all modern .NET versions</Description>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/Finturest/finturest-email-dotnet</PackageProjectUrl>
+    <PackageProjectUrl>https://finturest.com/products/email-apit</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>finturest;email;email-validation;email-verification;email-validator;email-verifier;email-validation-api;email-verification-api</PackageTags>
+    <Product>Finturest Email API</Product>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Finturest/finturest-email-dotnet</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup>
