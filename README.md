@@ -48,6 +48,48 @@ From within Visual Studio:
 5. Click on the Finturest.Email package, select the appropriate version in the
    right-tab and click _Install_.
 
+## Usage
+
+### Registering
+
+To use the `Finturest.Email` client, register it in your application's dependency injection container using `AddFinturestEmail`. This configures the services required to communicate with the Finturest Email API.
+
+```C#
+var services = new ServiceCollection();
+
+services.AddFinturestEmail(options =>
+{
+    options.ApiKey = "YOUR_API_KEY";
+});
+```
+
+> **Note**  
+> `IEmailServiceClient` is registered in the DI container and should be resolved via dependency injection.  
+> In ASP.NET Core applications, it's recommended to inject it through constructor injection.
+
+### Validating
+
+To validate an email address using the Finturest Email API, create a `ValidateEmailRequest` and call the `ValidateEmailAsync` method on the `IEmailServiceClient`.
+
+```C#
+var serviceProvider = services.BuildServiceProvider();
+
+var emailServiceClient = serviceProvider.GetRequiredService<IEmailServiceClient>();
+
+var request = new ValidateEmailRequest
+{
+    Email = "support@finturest.com"
+};
+
+var result = await emailServiceClient.ValidateEmailAsync(request);
+
+Console.WriteLine($"Deliverable: {result.Deliverable}.");
+```
+
+> **Note**  
+> In production applications, avoid using `BuildServiceProvider()` manually.  
+> Instead, use constructor injection to get `IEmailServiceClient` from the framework’s dependency injection system.
+
 ## Subscription & Pricing
 
 To get access to the Finturest Email API or subscribe to a plan, please visit the subscription page. An active subscription is required to access the API in production.
