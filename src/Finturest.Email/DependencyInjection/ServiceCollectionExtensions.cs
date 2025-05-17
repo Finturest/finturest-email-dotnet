@@ -13,7 +13,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddFinturestEmail(this IServiceCollection services, IConfigurationSection configurationSection)
     {
-#if NET7_0_OR_GREATER
+#if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(services);
         ArgumentNullException.ThrowIfNull(configurationSection);
 #else
@@ -37,7 +37,7 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddFinturestEmail(this IServiceCollection services, Action<EmailOptions> configureOptions)
     {
-#if NET7_0_OR_GREATER
+#if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(services);
         ArgumentNullException.ThrowIfNull(configureOptions);
 #else

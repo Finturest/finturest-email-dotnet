@@ -2,7 +2,7 @@
 
 public record EmailOptions
 {
-#if NET6_0_OR_GREATER
+#if NET7_0_OR_GREATER
     public required string ApiKey { get; set; }
 #else
     public string ApiKey { get; set; } = null!;
