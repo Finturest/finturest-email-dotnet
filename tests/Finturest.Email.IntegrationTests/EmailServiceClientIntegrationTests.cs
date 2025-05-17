@@ -28,14 +28,9 @@ public class EmailServiceClientIntegrationTests
 #endif
             .Build();
 
-        var apiKey = configuration["Email:ApiKey"];
+        var apiKey = configuration["Email:ApiKey"] ?? throw new InvalidOperationException("Finturest Email API key must be set in environment or user secrets.");
 
-        if (string.IsNullOrWhiteSpace(apiKey))
-        {
-            throw new InvalidOperationException("Finturest Email API key must be set in environment or user secrets.");
-        }
-
-        _sut = BuildClient(apiKey!);
+        _sut = BuildClient(apiKey);
     }
 
     [Fact]
