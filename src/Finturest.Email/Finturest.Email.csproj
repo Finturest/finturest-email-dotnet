@@ -73,6 +73,7 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="3.*" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.*" />
     <PackageReference Include="System.Net.Http.Json" Version="3.*" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
   <ItemGroup>

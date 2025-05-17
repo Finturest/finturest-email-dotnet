@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Http;
 
 using Finturest.Email.DependencyInjection;
 
@@ -19,7 +20,7 @@ public class EmailServiceClientIntegrationTests
 
     public EmailServiceClientIntegrationTests()
     {
-        _sut = BuildClient(apiKey: "{your-api-key}");
+        _sut = BuildClient(apiKey: "");
     }
 
     [Fact]
@@ -35,9 +36,13 @@ public class EmailServiceClientIntegrationTests
         Func<Task> action = async () => await BuildClient(apiKey: "invalid-api-key").ValidateEmailAsync(request).ConfigureAwait(false);
 
         // Assert
+#if NET5_0_OR_GREATER
         var assertion = await action.ShouldThrowAsync<HttpRequestException>();
 
         assertion.StatusCode.ShouldBe(HttpStatusCode.Unauthorized);
+#else
+        await action.ShouldThrowAsync<HttpRequestException>();
+#endif
     }
 
     [Fact]
