@@ -67,6 +67,11 @@ services.AddFinturestEmail(options =>
 > `IEmailServiceClient` is registered in the DI container and should be resolved via dependency injection.  
 > In ASP.NET Core applications, it's recommended to inject it through constructor injection.
 
+> **Note**  
+> The abstractions for the Finturest Email API client are provided in a separate package named `Finturest.Email.Abstractions`.  
+> You can reference this package in your business layer to avoid a tight dependency on the implementation.  
+> Only the root application or composition root should reference the full `Finturest.Email` package that contains the implementation.
+
 ### Validating
 
 To validate an email address using the Finturest Email API, create a `ValidateEmailRequest` and call the `ValidateEmailAsync` method on the `IEmailServiceClient`.
