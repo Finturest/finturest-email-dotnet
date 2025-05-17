@@ -1,11 +1,10 @@
 ﻿using System.Net;
 using System.Net.Http;
 
+using Finturest.Email.Abstractions;
+using Finturest.Email.Abstractions.Models.Enums;
+using Finturest.Email.Abstractions.Models.Requests;
 using Finturest.Email.DependencyInjection;
-
-using Fitnurest.Email.Abstractions;
-using Fitnurest.Email.Abstractions.Models.Enums;
-using Fitnurest.Email.Abstractions.Models.Requests;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

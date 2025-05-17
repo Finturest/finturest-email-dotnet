@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F839739B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finturest.Email", "src\Finturest.Email\Finturest.Email.csproj", "{ED3CCE64-0946-4342-89D4-A7FFFACCE132}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fitnurest.Email.Abstractions", "src\Fitnurest.Email.Abstractions\Fitnurest.Email.Abstractions.csproj", "{AF2B9C9B-E1F1-4038-8353-DD42BE5DD77D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finturest.Email.Abstractions", "src\Finturest.Email.Abstractions\Finturest.Email.Abstractions.csproj", "{AF2B9C9B-E1F1-4038-8353-DD42BE5DD77D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finturest.Email.IntegrationTests", "tests\Finturest.Email.IntegrationTests\Finturest.Email.IntegrationTests.csproj", "{7CA826E9-09A5-4729-88EF-17A0C1F8B26C}"
 EndProject

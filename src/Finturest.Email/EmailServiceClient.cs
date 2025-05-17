@@ -2,11 +2,10 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
+using Finturest.Email.Abstractions;
+using Finturest.Email.Abstractions.Models.Requests;
+using Finturest.Email.Abstractions.Models.Responses;
 using Finturest.Email.Constants;
-
-using Fitnurest.Email.Abstractions;
-using Fitnurest.Email.Abstractions.Models.Requests;
-using Fitnurest.Email.Abstractions.Models.Responses;
 
 namespace Finturest.Email;
 

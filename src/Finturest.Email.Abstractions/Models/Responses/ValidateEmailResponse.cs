@@ -1,4 +1,4 @@
-﻿namespace Fitnurest.Email.Abstractions.Models.Responses;
+﻿namespace Finturest.Email.Abstractions.Models.Responses;
 
 public record ValidateEmailResponse
 {

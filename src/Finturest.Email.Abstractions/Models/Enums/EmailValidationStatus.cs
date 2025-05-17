@@ -1,4 +1,4 @@
-﻿namespace Fitnurest.Email.Abstractions.Models.Enums;
+﻿namespace Finturest.Email.Abstractions.Models.Enums;
 
 public enum EmailValidationStatus
 {
