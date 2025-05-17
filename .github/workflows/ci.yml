@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      Finturest__Email__ApiKey: ${{ secrets.FINTUREST__EMAIL__APIKEY }}
+      Email__ApiKey: ${{ secrets.FINTUREST__EMAIL__APIKEY }}
   
     steps:
     - name: Checkout repository
