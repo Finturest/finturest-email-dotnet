@@ -21,7 +21,7 @@ public class EmailServiceClientIntegrationTests
     public EmailServiceClientIntegrationTests()
     {
         var configuration = new ConfigurationBuilder()
-            .AddEnvironmentVariables(prefix: "Finturest_")
+            .AddEnvironmentVariables()
 #if DEBUG
             .AddUserSecrets<EmailServiceClientIntegrationTests>()
 #endif
