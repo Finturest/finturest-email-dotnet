@@ -1,7 +1,7 @@
 # Finturest Email API C# SDK
 
 [![NuGet](https://img.shields.io/nuget/v/Finturest.Email.svg)](https://www.nuget.org/packages/Finturest.Email)
-![CI](https://github.com/finturest/finturest-email-dotnet/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/Finturest/finturest-email-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/Finturest/finturest-email-dotnet/actions/workflows/ci.yml)
 
 Official C# SDK for the [Finturest Email API](https://finturest.com/products/email-api) - supports .NET Standard 2.0+ and all modern .NET versions.
 
