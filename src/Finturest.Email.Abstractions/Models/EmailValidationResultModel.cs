@@ -2,7 +2,7 @@
 
 namespace Finturest.Email.Abstractions.Models;
 
-public record EmailValidationResult
+public record EmailValidationResultModel
 {
     /// <summary>
     /// Represents the type of validation check performed on the email address.

@@ -1,6 +1,6 @@
 ﻿namespace Finturest.Email.Abstractions.Models;
 
-public record EmailClassifications
+public record EmailClassificationsModel
 {
     /// <summary>
     /// Indicates whether the email address is from a known disposable or temporary email provider.

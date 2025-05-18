@@ -36,7 +36,7 @@ public class EmailServiceClientIntegrationTests
     public async Task ValidateEmailAsync_ApiKeyIsNotValid_EnsureUnauthorizedStatusCode()
     {
         // Arrange
-        var request = new ValidateEmailRequest
+        var request = new ValidateEmailRequestModel
         {
             Email = "support@finturest.com"
         };
@@ -58,7 +58,7 @@ public class EmailServiceClientIntegrationTests
     public async Task ValidateEmailAsync_EmailIsValid_ReturnCorrectResult()
     {
         // Arrange
-        var request = new ValidateEmailRequest
+        var request = new ValidateEmailRequestModel
         {
             Email = "support@finturest.com"
         };
@@ -89,7 +89,7 @@ public class EmailServiceClientIntegrationTests
     public async Task ValidateEmailAsync_EmailHasFormatErrors_ReturnCorrectResult()
     {
         // Arrange
-        var request = new ValidateEmailRequest
+        var request = new ValidateEmailRequestModel
         {
             Email = "support@@finturest.com"
         };
@@ -114,7 +114,7 @@ public class EmailServiceClientIntegrationTests
     public async Task ValidateEmailAsync_EmailHasInvalidDomain_ReturnCorrectResult()
     {
         // Arrange
-        var request = new ValidateEmailRequest
+        var request = new ValidateEmailRequestModel
         {
             Email = "support@test.com"
         };
