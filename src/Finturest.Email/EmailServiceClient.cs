@@ -27,7 +27,7 @@ public class EmailServiceClient : IEmailServiceClient
         _jsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     }
 
-    public async Task<ValidateEmailResponse> ValidateEmailAsync(ValidateEmailRequest request, CancellationToken cancellationToken = default)
+    public async Task<ValidateEmailResponseModel> ValidateEmailAsync(ValidateEmailRequestModel request, CancellationToken cancellationToken = default)
     {
 #if NET6_0_OR_GREATER
         ArgumentNullException.ThrowIfNull(request);
@@ -44,6 +44,6 @@ public class EmailServiceClient : IEmailServiceClient
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<ValidateEmailResponse>(_jsonSerializerOptions, cancellationToken).ConfigureAwait(false) ?? throw new InvalidOperationException("Failed to deserialize response.");
+        return await response.Content.ReadFromJsonAsync<ValidateEmailResponseModel>(_jsonSerializerOptions, cancellationToken).ConfigureAwait(false) ?? throw new InvalidOperationException("Failed to deserialize response.");
     }
 }

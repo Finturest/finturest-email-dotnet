@@ -81,7 +81,7 @@ var serviceProvider = services.BuildServiceProvider();
 
 var emailServiceClient = serviceProvider.GetRequiredService<IEmailServiceClient>();
 
-var request = new ValidateEmailRequest
+var request = new ValidateEmailRequestModel
 {
     Email = "support@finturest.com"
 };

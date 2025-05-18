@@ -15,5 +15,5 @@ public interface IEmailServiceClient
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
     /// <exception cref="ArgumentNullException">The request model was null.</exception>
     /// <exception cref="HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout.</exception>
-    Task<ValidateEmailResponse> ValidateEmailAsync(ValidateEmailRequest request, CancellationToken cancellationToken = default);
+    Task<ValidateEmailResponseModel> ValidateEmailAsync(ValidateEmailRequestModel request, CancellationToken cancellationToken = default);
 }
